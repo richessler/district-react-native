@@ -11,7 +11,7 @@ var endDateNum = jsDate.getFullYear() + '-' + (jsDate.getMonth() + 1) + '-' + (j
 var todayDate = dateNum.toString();
 var endDate = endDateNum.toString();
 
-var REQUEST_URL = 'http://api.seatgeek.com/2/events?datetime_utc.gte=' + todayDate + '&datetime_utc.lte=' + '2015-12-31' + '&venue.state=DC&per_page=400';
+var REQUEST_URL = 'http://api.seatgeek.com/2/events?datetime_utc.gte=' + todayDate + '&datetime_utc.lte=' + '2015-12-31' + '&venue.state=DC&per_page=40';
 
 
 var {

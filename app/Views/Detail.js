@@ -1,54 +1,48 @@
-"use strict";
+'use strict';
 
-var React = require("react-native");
-
+var React = require('react-native');
 var {
-    Component,
-    StyleSheet,
-    Text,
-    View,
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
 } = React;
 
-class SecureView extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: this.props.username,
-            password: this.props.password
-        };
-    }
-
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text style={styles.heading}>
-                    Welcome {this.props.username}!
-                </Text>
-                <Text style={styles.subheading}>
-                    Your password is {this.props.password}
-                </Text>
-            </View>
-        );
-    }
-
-};
-
-var styles = StyleSheet.create({
-    container: {
-        padding: 30,
-        marginTop: 65,
-        alignItems: "center"
-    },
-    heading: {
-        marginBottom: 20,
-        fontSize: 18,
-        textAlign: "center",
-        color: "#656565"
-    },
-    subheading: {
-        color: "#cccccc"
-    }
+var Detail = React.createClass({
+  render: function() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit index.android.js
+        </Text>
+        <Text style={styles.instructions}>
+          Shake or press menu button for dev menu
+        </Text>
+      </View>
+    );
+  }
 });
 
-module.exports = SecureView;
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
+
+module.exports = Detail;
