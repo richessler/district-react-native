@@ -7,9 +7,7 @@ var {
     AppRegistry,
     Text,
     StyleSheet,
-    Button,
     TouchableOpacity,
-    StatusBarIOS,
 } = React;
 
 class districtin extends React.Component {

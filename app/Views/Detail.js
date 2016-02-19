@@ -1,4 +1,5 @@
 'use strict';
+import MapView from 'react-native-maps';
 
 var React = require('react-native');
 var {

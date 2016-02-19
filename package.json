@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@exponent/react-native-navigator": "^0.3.5",
-    "react-native": "^0.16.0"
+    "react-native": "^0.16.0",
+    "react-native-maps": "^0.3.0"
   }
 }

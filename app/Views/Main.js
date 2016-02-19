@@ -5,13 +5,7 @@ String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
-var jsDate = new Date();
-var dateNum = jsDate.getFullYear() + '-' + (jsDate.getMonth() + 1) + '-' + jsDate.getDate();
-var endDateNum = jsDate.getFullYear() + '-' + (jsDate.getMonth() + 1) + '-' + (jsDate.getDate() + 1);
-var todayDate = dateNum.toString();
-var endDate = endDateNum.toString();
-
-var REQUEST_URL = 'http://api.seatgeek.com/2/events?datetime_utc.gte=' + todayDate + '&datetime_utc.lte=' + '2015-12-31' + '&venue.state=DC&per_page=40';
+var REQUEST_URL = 'http://localhost:3000/v1/events';
 
 
 var {
@@ -83,23 +77,18 @@ var Main = React.createClass({
   },
 
   renderEvent: function(event) {
-    // var eventDateFull = {event.datetime_local}
-    // var eventDate = function(){
-    //   var dateArray = eventDateFull.split('T');
-    //   return dateArray[0];
-    // }
     return (
       <View style={styles.container}>
         <View style={styles.content}>
           <View style={styles.leftContainer}>
             <Image
-              source={{uri: event.performers[0].images.huge ? event.performers[0].images.huge : 'http://i.imgur.com/GJxu7z1.png'}}
+              source={{uri: event.image ? event.image : 'http://i.imgur.com/GJxu7z1.png'}}
               style={styles.thumbnail}
             />
           </View>
           <View style={styles.rightContainer}>
-            <Text style={styles.title}>{event.title.split('-')[0]}</Text>
-            <Text style={styles.year}>{event.venue.name} - {event.type.capitalize().split('_').join(' ')} - {event.datetime_local.split('T')[0]}</Text>
+            <Text style={styles.title}>{event.title}</Text>
+
           </View>
         </View>
       </View>
